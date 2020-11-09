@@ -1,0 +1,17 @@
+{
+	"name": "pakettikauppa-backend",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "ssh://git@gitlab.pakettikauppa.fi:2224/aalto/pakettikauppa-backend.git",
+	"license": "MIT",
+	"scripts": {
+		"build": "tsc --build tsconfig.json",
+		"start": "yarn run build && node ./build/index.js"
+	},
+	"dependencies": {
+		"@tsconfig/node14": "^1.0.0",
+		"cors": "^2.8.5",
+		"express": "^4.17.1",
+		"typescript": "^4.0.5"
+	}
+}
