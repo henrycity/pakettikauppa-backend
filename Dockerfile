@@ -5,7 +5,7 @@ WORKDIR /app
 # Install dependencies
 COPY *.lock .
 COPY package*.json .
-RUN yarn install
+RUN yarn install --prod
 
 # Copy config files
 COPY tsconfig.json .
