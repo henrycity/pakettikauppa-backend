@@ -3,9 +3,10 @@
 
   "compilerOptions": {
     "lib": ["dom", "ESNext"],
-    "outDir": "./build"
+    "outDir": "./build",
+    "resolveJsonModule": true
   },
 
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "source-path/**/*.json"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
