@@ -16,4 +16,4 @@ COPY ./src ./src
 # Build the source
 #RUN yarn tsc --build tsconfig.json
 
-ENTRYPOINT [ "yarn", "run" ]
+ENTRYPOINT [ "yarn", "run", "start-no-build" ]
