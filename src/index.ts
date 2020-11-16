@@ -1,9 +1,13 @@
 import express from 'express'
+import { AdminUser } from './data/users'
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
+app.get('/permissions', (req, res) => {
+  const permissions = AdminUser.roles.flatMap((role) => {
+    return role.permissions
+  })
+  res.send(permissions)
 })
 
 app.listen(port, () => {
