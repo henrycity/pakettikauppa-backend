@@ -7,7 +7,7 @@ app.get('/permissions', (req, res) => {
   const permissions = AdminUser.roles.flatMap((role) => {
     return role.permissions
   })
-  res.send(permissions)
+  res.json(permissions)
 })
 
 app.listen(port, () => {
