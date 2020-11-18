@@ -10,17 +10,18 @@ app.use(cors)
 app.use(express.json())
 app.use(cookieParser())
 
-app.get('/', tokenVerifier, (req, res) => {
-  res.json({ success: true })
-})
-
 app.post('/login', (req, res) => {
   const { idToken } = req.body
   res.cookie('jwt', idToken, { httpOnly: true, maxAge: 3600000 })
   res.json({ success: true })
 })
 
-app.get('/permissions', (req, res) => {
+app.get('/user', tokenVerifier, (_req, res) => {
+  const { username, merchants } = AdminUser
+  res.json({ username, merchants })
+})
+
+app.get('/permissions', tokenVerifier, (_req, res) => {
   const permissions = AdminUser.roles.flatMap((role) => {
     return role.permissions
   })
