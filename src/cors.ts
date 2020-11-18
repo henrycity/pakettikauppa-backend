@@ -1,6 +1,10 @@
 import cors from 'cors'
 
-const allowlist = ['http://localhost:19006']
+const allowlist = [
+  'http://localhost:19006',
+  'http://localhost:5000',
+  'https://pakettikauppa-expo.netlify.app',
+]
 
 export function corsOptionsDelegate(req: any, callback: any) {
   let corsOptions
