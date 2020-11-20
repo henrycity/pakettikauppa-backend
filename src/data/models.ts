@@ -1,4 +1,4 @@
-import { ScreenName } from '../types'
+import { Screen } from '../types'
 
 export interface Merchant {
   users: User[]
@@ -18,5 +18,5 @@ export interface Role {
 }
 
 export interface Permission {
-  screenName: ScreenName
+  screen: Screen
 }

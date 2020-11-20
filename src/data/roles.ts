@@ -1,6 +1,7 @@
 import { Role } from './models'
+import { Screen } from '../types'
 
 export const AdminRole: Role = {
   roleName: 'Admin',
-  permissions: [{ screenName: 'Profile' }, { screenName: 'Shipments' }],
+  permissions: [{ screen: Screen.Profile }, { screen: Screen.Shipments }],
 }

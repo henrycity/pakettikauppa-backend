@@ -1,1 +1,4 @@
-export type ScreenName = 'Profile' | 'Shipments'
+export enum Screen {
+  Profile,
+  Shipments,
+}
