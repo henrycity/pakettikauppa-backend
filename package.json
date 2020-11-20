@@ -2,6 +2,7 @@
   "name": "pakettikauppa-backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "repository": "ssh://git@gitlab.pakettikauppa.fi:2224/aalto/pakettikauppa-backend.git",
   "license": "MIT",
   "scripts": {
@@ -9,7 +10,8 @@
     "start": "yarn run build && node ./build/index.js",
     "dev": "nodemon -x ts-node-dev src/index.ts",
     "format": "yarn prettier --write .",
-    "lint": "yarn eslint . --fix"
+    "lint": "yarn eslint . --fix",
+    "test": "jest --watchAll"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
@@ -18,32 +20,47 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.0",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
     "@tsconfig/node14": "^1.0.0",
     "@types/cookie-parser": "^1.4.2",
     "@types/cors": "^2.8.8",
     "@types/express": "^4.17.9",
+    "@types/jest": "^26.0.15",
     "@types/node": "^14.14.7",
+    "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.7.0",
     "@typescript-eslint/parser": "^4.7.0",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^4.3.0",
+    "jest": "^26.6.3",
     "lint-staged": "^10.5.1",
     "nodemon": "^2.0.6",
     "prettier": "^2.1.2",
+    "supertest": "^6.0.1",
     "ts-node-dev": "^1.0.0",
     "typescript": "^4.0.5"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "pre-push": "jest --bail"
     }
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "prettier --write",
-      "yarn run lint"
+      "yarn lint",
+      "jest --bail"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/build"
     ]
   }
 }
