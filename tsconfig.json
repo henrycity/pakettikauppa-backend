@@ -3,7 +3,9 @@
 
   "compilerOptions": {
     "lib": ["dom", "ESNext"],
-    "outDir": "./build"
+    "outDir": "./build",
+    "target": "es6",
+    "module": "commonjs"
   },
 
   "include": ["src/**/*"],

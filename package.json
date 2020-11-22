@@ -2,7 +2,6 @@
   "name": "pakettikauppa-backend",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module",
   "repository": "ssh://git@gitlab.pakettikauppa.fi:2224/aalto/pakettikauppa-backend.git",
   "license": "MIT",
   "scripts": {
