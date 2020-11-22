@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "start": "yarn run build && node ./build/index.js",
-    "dev": "nodemon -x ts-node-dev src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint . --fix",
     "test": "jest --watchAll"
