@@ -5,7 +5,7 @@ WORKDIR /app
 # Install dependencies
 COPY *.lock .
 COPY package*.json .
-RUN yarn install --prod
+RUN yarn install
 
 # Copy config files
 COPY tsconfig.json .
@@ -14,6 +14,6 @@ COPY tsconfig.json .
 COPY ./src ./src
 
 # Build the source
-#RUN yarn tsc --build tsconfig.json
+RUN yarn tsc --build tsconfig.json
 
-ENTRYPOINT [ "yarn", "run" ]
+ENTRYPOINT [ "yarn", "run", "start-no-build" ]

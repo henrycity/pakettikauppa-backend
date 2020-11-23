@@ -7,6 +7,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "start": "yarn run build && node ./build/index.js",
+    "start-no-build": "node ./build/index.js",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint ."
   },

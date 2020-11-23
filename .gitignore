@@ -63,5 +63,5 @@ jspm_packages/
 # Compiled code
 build
 
-# IntelliJ IDEA
-.idea
+# Environment files
+.env

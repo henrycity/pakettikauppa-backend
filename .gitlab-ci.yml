@@ -1,0 +1,62 @@
+stages:
+#  - syntax
+  - build
+#  - unit tests
+  - release
+  - deploy
+
+variables:
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE
+  DOCKER_API_VERSION: "1.38"
+
+build:
+  image: docker:stable
+
+  stage: build
+
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE .
+    - docker push $CONTAINER_TEST_IMAGE
+
+  only:
+    - master
+    - merge_requests
+
+release:
+  image: docker:stable
+
+  stage: release
+
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker push $CONTAINER_RELEASE_IMAGE:$CI_COMMIT_SHORT_SHA
+
+  only:
+    - master
+
+deploy to server:
+  image: kroniak/ssh-client:3.6
+
+  stage: deploy
+
+  environment:
+    name: production
+
+  script:
+    - mkdir ~/.ssh
+    - ssh-keyscan 10.1.0.24 > ~/.ssh/known_hosts
+    - echo "$DEPLOY_SSH_KEY" > ~/.ssh/id_rsa
+    - chmod -R 600 ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "cd /opt/aalto; docker-compose -f docker-compose.yml -f docker-compose-server.yml pull; docker-compose -f docker-compose.yml -f docker-compose-server.yml up -d" | ssh aalto@10.1.0.24  "bash -l -s"
+
+  only:
+    - master

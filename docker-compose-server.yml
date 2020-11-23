@@ -1,0 +1,4 @@
+version: '3.8'
+services:
+  pakettikauppa-backend:
+    image: gitlab.pakettikauppa.fi:4000/aalto/pakettikauppa-backend:latest

@@ -1,4 +1,7 @@
 version: '3.8'
 services:
   pakettikauppa-backend:
-    build: .
+    ports: 
+      - ${PUBLISH_PORT}:${PORT}
+    env_file: 
+      - backend.env
