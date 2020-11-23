@@ -52,7 +52,7 @@
     "*.{js,ts,tsx}": [
       "prettier --write",
       "yarn lint",
-      "jest --bail"
+      "jest --bail --findRelatedTests"
     ]
   },
   "jest": {

@@ -2,11 +2,11 @@ import express from 'express'
 import { AdminUser } from './data/users'
 import cookieParser from 'cookie-parser'
 import { tokenVerifier } from './authentication'
-import cors from './cors'
+import corsSetup from './corsSetup'
 
 const app = express()
 
-app.use(cors)
+app.use(corsSetup)
 app.use(express.json())
 app.use(cookieParser())
 
