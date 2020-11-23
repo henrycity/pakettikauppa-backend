@@ -10,6 +10,11 @@ variables:
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE
   DOCKER_API_VERSION: "1.38"
 
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .yarn/
+
 lint:
   image: node:14.15
 
