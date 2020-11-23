@@ -9,7 +9,9 @@
     "start": "yarn run build && node ./build/index.js",
     "start-no-build": "node ./build/index.js",
     "format": "yarn prettier --write .",
-    "lint": "yarn eslint ."
+    "lint": "yarn eslint . --fix",
+		"type-check": "tsc --noEmit",
+		"test": "yarn jest"
   },
   "dependencies": {
     "cors": "^2.8.5",
