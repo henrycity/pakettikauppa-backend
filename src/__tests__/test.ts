@@ -57,4 +57,18 @@ describe('App endpoints', () => {
   it('should return 403 if not logged in (user)', function (done) {
     request(app).get('/user').expect(403, done)
   })
+
+  it('/register should return 400 with wrong data', function (done) {
+    request(app)
+      .post('/register')
+      .send({ email: 'testemail@email.com' })
+      .expect(400, done)
+  })
+
+  it('/register should return 200 with correct data', function (done) {
+    request(app)
+      .post('/register')
+      .send({ email: 'testemail@email.com', vat_id: '22842235-2' })
+      .expect(200, done)
+  })
 })
