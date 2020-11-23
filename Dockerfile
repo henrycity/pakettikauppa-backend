@@ -1,4 +1,5 @@
-FROM node:lts
+# --[Builder stage]--
+FROM node:14 AS builder
 
 WORKDIR /app
 
@@ -14,6 +15,20 @@ COPY tsconfig.json .
 COPY ./src ./src
 
 # Build the source
-RUN yarn tsc --build tsconfig.json
+RUN yarn build
 
+# --[Production stage]--
+FROM node:14
+
+WORKDIR /app
+
+# Install dependencies
+COPY *.lock .
+COPY package*.json .
+RUN yarn install --prod
+
+# Copy built project files from builder
+COPY --from=builder /app/build ./build
+
+# Run the backend
 ENTRYPOINT [ "yarn", "run", "start-no-build" ]
