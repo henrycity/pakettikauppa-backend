@@ -10,7 +10,7 @@
     "dev": "nodemon -x ts-node-dev src/index.ts",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint . --fix",
-    "test": "jest --watchAll"
+    "test": "yarn jest"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
