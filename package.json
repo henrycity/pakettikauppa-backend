@@ -41,7 +41,8 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "prettier --write",
-      "yarn run lint"
+      "yarn run lint",
+			"yarn run type-check"
     ]
   }
 }
