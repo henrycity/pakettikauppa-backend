@@ -45,7 +45,7 @@ describe('App endpoints', () => {
         const { username } = res.body
         if (!username) throw new Error('No username found on user')
         if (username !== 'Admin')
-          throw new Error('Expexted username to be Admin')
+          throw new Error('Expected username to be Admin')
       })
       .then(() => done())
   })
