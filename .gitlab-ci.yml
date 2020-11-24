@@ -1,7 +1,7 @@
 stages:
-#  - syntax
+  - lint
+  - test
   - build
-#  - unit tests
   - release
   - deploy
 
@@ -9,6 +9,34 @@ variables:
   CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE
   DOCKER_API_VERSION: "1.38"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .yarn/
+
+lint:
+  image: node:14.15
+
+  stage: lint
+
+  before_script:
+    - yarn install --cache-folder .yarn --frozen-lockfile
+
+  script:
+    - yarn lint
+    - yarn type-check
+
+jest-tests:
+  image: node:14.15
+
+  stage: test
+
+  before_script:
+    - yarn install --cache-folder .yarn --frozen-lockfile
+
+  script:
+    - yarn jest --ci --cacheDirectory .jest
 
 build:
   image: docker:stable
