@@ -1,3 +1,5 @@
+![Coverage](https://gitlab.pakettikauppa.fi/aalto/pakettikauppa-backend/badges/master/coverage.svg?style=flat-square)
+
 ### How to run
 
 You need to have Node and Yarn installed
