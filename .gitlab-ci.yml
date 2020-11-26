@@ -19,6 +19,7 @@ lint:
   image: node:14.15
 
   stage: lint
+  needs: []
 
   before_script:
     - yarn install --cache-folder .yarn --frozen-lockfile
@@ -31,6 +32,7 @@ jest-tests:
   image: node:14.15
 
   stage: test
+  needs: []
 
   before_script:
     - yarn install --cache-folder .yarn --frozen-lockfile
