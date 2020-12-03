@@ -22,7 +22,7 @@ lint:
   needs: []
 
   before_script:
-    - yarn install --cache-folder .yarn --frozen-lockfile
+    - yarn install --cache-folder .yarn
 
   script:
     - yarn lint
@@ -35,7 +35,7 @@ jest-tests:
   needs: []
 
   before_script:
-    - yarn install --cache-folder .yarn --frozen-lockfile
+    - yarn install --cache-folder .yarn
 
   script:
     - yarn jest --coverage --ci --cacheDirectory .jest
