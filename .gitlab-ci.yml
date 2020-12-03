@@ -38,7 +38,11 @@ jest-tests:
     - yarn install --cache-folder .yarn --frozen-lockfile
 
   script:
-    - yarn jest --ci --cacheDirectory .jest
+    - yarn jest --coverage --ci --cacheDirectory .jest
+
+  artifacts:
+    reports:
+      cobertura: coverage/cobertura-coverage.xml
 
 build:
   image: docker:stable
