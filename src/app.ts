@@ -28,7 +28,7 @@ app.get('/user', tokenVerifier, (_req, res) => {
   res.json({ username, merchants })
 })
 
-app.get('/permissions', tokenVerifier, (_req, res) => {
+app.get('/permissions', /*tokenVerifier,*/ (_req, res) => {
   const permissions = AdminUser.roles.flatMap((role) => {
     return role.permissions
   })
