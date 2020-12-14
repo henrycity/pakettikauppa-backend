@@ -1,6 +1,6 @@
 ![Coverage](https://gitlab.pakettikauppa.fi/aalto/pakettikauppa-backend/badges/master/coverage.svg?style=flat-square)
 
-[http://94.237.112.37:3000/](http://94.237.112.37:3000/)
+[https://pk-aalto.setamies.com/](https://pk-aalto.setamies.com/)
 
 ### How to run
 
