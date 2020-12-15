@@ -23,6 +23,11 @@ app.post('/register', (req, res) => {
   else res.status(400).json({ success: false })
 })
 
+app.post('/logout', (_, res) => {
+  res.clearCookie('jwt')
+  res.json({ success: true })
+})
+
 app.get('/user', tokenVerifier, (_req, res) => {
   const { username, merchants } = AdminUser
   res.json({ username, merchants })
