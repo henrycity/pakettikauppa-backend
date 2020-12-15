@@ -1,14 +1,10 @@
-### What is the name and description of the ticket? 
-PA-X:
+### What is the name and description of the ticket?
 
+PA-X:
 
 ### What has changed in this PR? (Bug fix, feature, docs update, code changes...)
 
-
-
 ### Other information:
-
-
 
 ### Checklist:
 

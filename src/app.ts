@@ -13,7 +13,12 @@ app.use(cookieParser())
 
 app.post('/login', (req, res) => {
   const { idToken } = req.body
-  res.cookie('jwt', idToken, { httpOnly: true, maxAge: 3600000 })
+  res.cookie('jwt', idToken, {
+    httpOnly: true,
+    maxAge: 3600000,
+    secure: process.env.NODE_ENV == 'test' ? false : true,
+    sameSite: 'none',
+  })
   res.json({ success: true })
 })
 
