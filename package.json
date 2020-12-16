@@ -6,13 +6,13 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc --build tsconfig.json",
-    "start": "yarn run build && node -r dotenv/config ./build/index.js",
+    "start": "NODE_ENV=production yarn run build && NODE_ENV=production node -r dotenv/config ./build/index.js",
     "start-no-build": "node -r dotenv/config ./build/index.js",
-    "dev": "yarn ts-node-dev -r dotenv/config src/index.ts",
+    "dev": "NODE_ENV=development yarn ts-node-dev -r dotenv/config src/index.ts",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint . --fix",
     "type-check": "tsc --noEmit",
-    "test": "NODE_ENV=test && yarn jest"
+    "test": "NODE_ENV=test yarn jest"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",

@@ -16,8 +16,8 @@ app.post('/login', (req, res) => {
   res.cookie('jwt', idToken, {
     httpOnly: true,
     maxAge: 3600000,
-    secure: process.env.NODE_ENV == 'test' ? false : true,
-    sameSite: 'none',
+    secure: process.env.NODE_ENV === 'production' ? true : false,
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
   })
   res.json({ success: true })
 })
