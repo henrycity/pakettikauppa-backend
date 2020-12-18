@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc --build tsconfig.json",
     "start": "NODE_ENV=production yarn run build && NODE_ENV=production node -r dotenv/config ./build/index.js",
-    "start-no-build": "node -r dotenv/config ./build/index.js",
+    "start-no-build": "NODE_ENV=production node -r dotenv/config ./build/index.js",
     "dev": "NODE_ENV=development yarn ts-node-dev -r dotenv/config src/index.ts",
     "format": "yarn prettier --write .",
     "lint": "yarn eslint . --fix",
