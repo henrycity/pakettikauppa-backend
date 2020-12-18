@@ -19,10 +19,7 @@ const cookieSettings = {
   httpOnly: true,
   maxAge: 3600000,
   secure: process.env.NODE_ENV === 'production' ? true : false,
-  sameSite:
-    process.env.NODE_ENV === 'production'
-      ? ('none' as const)
-      : ('lax' as const),
+  sameSite: 'strict' as const,
 }
 
 app.post('/login', (req, res) => {
