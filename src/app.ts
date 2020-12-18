@@ -7,6 +7,10 @@ import { RegisterForm } from './types'
 
 const app = express()
 
+// http://expressjs.com/en/guide/behind-proxies.html
+// https://stackoverflow.com/questions/23413401/what-does-trust-proxy-actually-do-in-express-js-and-do-i-need-to-use-it
+app.set('trust proxy', true)
+
 app.use(corsSetup)
 app.use(express.json())
 app.use(cookieParser())
@@ -44,9 +48,5 @@ app.get('/permissions', tokenVerifier, (_req, res) => {
   })
   res.json(permissions)
 })
-
-// http://expressjs.com/en/guide/behind-proxies.html
-// https://stackoverflow.com/questions/23413401/what-does-trust-proxy-actually-do-in-express-js-and-do-i-need-to-use-it
-app.set('trust proxy', 'loopback')
 
 export default app
