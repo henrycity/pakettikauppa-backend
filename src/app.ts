@@ -15,14 +15,19 @@ app.use(corsSetup)
 app.use(express.json())
 app.use(cookieParser())
 
+const cookieSettings = {
+  httpOnly: true,
+  maxAge: 3600000,
+  secure: process.env.NODE_ENV === 'production' ? true : false,
+  sameSite:
+    process.env.NODE_ENV === 'production'
+      ? ('none' as const)
+      : ('lax' as const),
+}
+
 app.post('/login', (req, res) => {
   const { idToken } = req.body
-  res.cookie('jwt', idToken, {
-    httpOnly: true,
-    maxAge: 3600000,
-    secure: process.env.NODE_ENV === 'production' ? true : false,
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-  })
+  res.cookie('jwt', idToken, cookieSettings)
   res.json({ success: true })
 })
 
@@ -33,8 +38,8 @@ app.post('/register', (req, res) => {
 })
 
 app.post('/logout', (_, res) => {
-  res.clearCookie('jwt')
-  res.json({ success: true })
+  res.clearCookie('jwt', cookieSettings)
+  res.status(200)
 })
 
 app.get('/user', tokenVerifier, (_req, res) => {
