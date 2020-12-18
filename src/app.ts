@@ -39,7 +39,7 @@ app.post('/register', (req, res) => {
 
 app.post('/logout', (_, res) => {
   res.clearCookie('jwt', cookieSettings)
-  res.status(200)
+  res.json({ success: true })
 })
 
 app.get('/user', tokenVerifier, (_req, res) => {
