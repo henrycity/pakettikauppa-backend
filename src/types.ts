@@ -1,4 +1,9 @@
-export type Screen = 'Profile' | 'Shipments' | 'Settings'
+export type Screen =
+  | 'Profile'
+  | 'Reports'
+  | 'Settings'
+  | 'Shipments'
+  | 'Statistics'
 
 export interface RegisterForm {
   email: string
