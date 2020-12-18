@@ -15,11 +15,19 @@ app.use(corsSetup)
 app.use(express.json())
 app.use(cookieParser())
 
+const getDomain = () => {
+  const env = process.env.NODE_ENV
+  if (env === 'production') return 'pakettikauppa-expo.netlify.app'
+  if (env === 'development') return 'localhost'
+  else return ''
+}
+
 const cookieSettings = {
   httpOnly: true,
   maxAge: 3600000,
-  secure: process.env.NODE_ENV === 'production' ? true : false,
+  domain: getDomain(),
   sameSite: 'strict' as const,
+  secure: process.env.NODE_ENV === 'production' ? true : false,
 }
 
 app.post('/login', (req, res) => {
