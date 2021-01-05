@@ -1,10 +1,11 @@
-import express from 'express'
+import express, { Request, Response } from 'express'
 import { AdminUser } from './data/users'
 import { Shipments } from './data/shipments'
 import cookieParser from 'cookie-parser'
 import { tokenVerifier } from './authentication'
 import corsSetup from './corsSetup'
 import { RegisterForm } from './types'
+import { body, validationResult } from 'express-validator'
 
 const app = express()
 
@@ -58,5 +59,41 @@ app.get('/permissions', tokenVerifier, (_req, res) => {
 app.get('/shipments', tokenVerifier, (_req, res) => {
   res.json(Shipments)
 })
+
+app.post(
+  '/shipments',
+  tokenVerifier,
+  // Validate shipment fields
+  body('receiverName').isString(),
+  body('receiverEmail').isEmail().normalizeEmail(),
+  body('postCode').isPostalCode('FI'),
+  body('postOffice').isString(),
+  body('countryCode').equals('FI'),
+  (req: Request, res: Response) => {
+    const errors = validationResult(req)
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() })
+    }
+    const postData = req.body
+    // Create a new shipment based on the given values. Will not include any extra fields from the post for security and such
+    const newShipment = {
+      id: Shipments[Shipments.length - 1].id + 1, // Increment last shipment's ID by 1
+      createdOn: new Date(),
+      receiverName: postData.receiverName,
+      receiverEmail: postData.receiverEmail,
+      postCode: postData.postCode,
+      postOffice: postData.postOffice,
+      countryCode: postData.countryCode,
+      price: 0, // Ideally this should be queried from the Posti API in the backend (Don't trust the user)
+      // The following should be changed when we have implementation for it
+      status: '',
+      reference: '',
+      latestEvent: '',
+      invoiceNumber: '',
+    }
+    Shipments.push(newShipment) // Add the new shipment to our shipments
+    res.json({ success: true })
+  }
+)
 
 export default app
