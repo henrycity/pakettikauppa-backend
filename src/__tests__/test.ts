@@ -70,4 +70,12 @@ describe('App endpoints', () => {
       .send({ email: 'testemail@email.com', vat_id: '22842235-2' })
       .expect(200, done)
   })
+
+  it('/shipments should return 403 if not logged in', function (done) {
+    request(app).get('/shipments').expect(403, done)
+  })
+
+  it('/shipments should return 200 when logged in', function (done) {
+    agent.get('/shipments').expect(200, done)
+  })
 })

@@ -1,5 +1,6 @@
 import express from 'express'
 import { AdminUser } from './data/users'
+import { Shipments } from './data/shipments'
 import cookieParser from 'cookie-parser'
 import { tokenVerifier } from './authentication'
 import corsSetup from './corsSetup'
@@ -52,6 +53,10 @@ app.get('/permissions', tokenVerifier, (_req, res) => {
     return role.permissions
   })
   res.json(permissions)
+})
+
+app.get('/shipments', tokenVerifier, (_req, res) => {
+  res.json(Shipments)
 })
 
 export default app
