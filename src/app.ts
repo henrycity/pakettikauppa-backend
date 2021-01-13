@@ -92,7 +92,7 @@ app.post(
       invoiceNumber: '',
     }
     Shipments.push(newShipment) // Add the new shipment to our shipments
-    res.json({ success: true })
+    res.json({ success: true, shipment: newShipment })
   }
 )
 
