@@ -5,6 +5,7 @@ const allowlist = [
   'http://localhost:19006',
   'http://localhost:5000',
   'https://pakettikauppa-expo.netlify.app',
+  'https://expo:19006',
 ]
 
 export function corsOptionsDelegate(
