@@ -46,14 +46,10 @@ app.post('/logout', (_, res) => {
 
 app.get('/user', tokenVerifier, (_req, res) => {
   const { username, merchants } = AdminUser
-  res.json({ username, merchants })
-})
-
-app.get('/permissions', tokenVerifier, (_req, res) => {
   const permissions = AdminUser.roles.flatMap((role) => {
     return role.permissions
   })
-  res.json(permissions)
+  res.json({ username, merchants, permissions })
 })
 
 app.get('/shipments', tokenVerifier, (_req, res) => {
