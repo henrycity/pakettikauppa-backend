@@ -22,14 +22,14 @@ describe('App endpoints', () => {
 
   it('should return correct permissions', async function (done) {
     agent
-      .get('/permissions')
+      .get('/user')
       .expect((res) => {
-        const profile = res.body.find(
+        const profile = res.body.permissions.find(
           (permission: Permission) => permission.screen == 'Profile'
         )
         if (!profile) throw new Error('Profile not in permissions')
 
-        const shipments = res.body.find(
+        const shipments = res.body.permissions.find(
           (permission: Permission) => permission.screen == 'Shipments'
         )
         if (!shipments) throw new Error('Shipments not in permissions')
@@ -47,10 +47,6 @@ describe('App endpoints', () => {
           throw new Error('Expected username to be Admin')
       })
       .then(() => done())
-  })
-
-  it('should return 403 if not logged in (permissions)', function (done) {
-    request(app).get('/permissions').expect(403, done)
   })
 
   it('should return 403 if not logged in (user)', function (done) {
