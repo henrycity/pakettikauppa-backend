@@ -80,6 +80,7 @@ app.post(
       postCode: postData.postCode,
       postOffice: postData.postOffice,
       countryCode: postData.countryCode,
+      deliveryCompany: postData.deliveryCompany,
       price: 0, // Ideally this should be queried from the Posti API in the backend (Don't trust the user)
       // The following should be changed when we have implementation for it
       status: '',

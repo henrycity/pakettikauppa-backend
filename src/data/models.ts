@@ -33,6 +33,7 @@ export interface Shipment {
   countryCode: string
   // Other
   price: number
+  deliveryCompany: string
   status: string
   reference: string
   latestEvent: string
