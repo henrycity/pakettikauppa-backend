@@ -52,8 +52,20 @@ app.get('/user', tokenVerifier, (_req, res) => {
   res.json({ username, merchants, permissions })
 })
 
+app.get('/permissions', tokenVerifier, (_req, res) => {
+  const permissions = AdminUser.roles.flatMap((role) => {
+    return role.permissions
+  })
+  res.json(permissions)
+})
+
 app.get('/shipments', tokenVerifier, (_req, res) => {
-  res.json(Shipments)
+  const shipments = Shipments.map((shipment) => {
+    const s: any = { ...shipment }
+    s.createdOn = shipment.createdOn.toLocaleDateString('fi-FI')
+    return s
+  })
+  res.json(shipments)
 })
 
 app.post(
