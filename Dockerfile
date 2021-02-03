@@ -27,6 +27,9 @@ COPY *.lock .
 COPY package*.json .
 RUN yarn install --prod
 
+# Create SSL cert
+RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 3650 -nodes -out backend.crt -keyout backend.key -subj "/C=/ST=/L=/O=/OU=/CN="
+
 # Copy built project files from builder
 COPY --from=builder /app/build ./build
 

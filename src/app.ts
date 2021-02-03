@@ -3,9 +3,9 @@ import { AdminUser } from './data/users'
 import { Shipments } from './data/shipments'
 import cookieParser from 'cookie-parser'
 import { tokenVerifier } from './authentication'
-import corsSetup from './corsSetup'
 import { RegisterForm } from './types'
 import { body, validationResult } from 'express-validator'
+import cors from 'cors'
 
 const app = express()
 
@@ -13,7 +13,11 @@ const app = express()
 // https://stackoverflow.com/questions/23413401/what-does-trust-proxy-actually-do-in-express-js-and-do-i-need-to-use-it
 app.set('trust proxy', true)
 
-app.use(corsSetup)
+const corsOptions = {
+  credentials: true,
+  origin: true,
+}
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 

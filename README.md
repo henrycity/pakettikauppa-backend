@@ -27,3 +27,12 @@ Run scripts by prepending them with `yarn`, e.g. `yarn lint`
   - Run TypeScript's type-checking
 - `test`
   - Run Jest tests
+
+### HTTPS
+The backend supports HTTPS by either a cert and key file, or using devcert; this is controlled using the HTTPS environment variable:
+ - `true`
+	- Uses local files in the app root named `backend.crt` and `backend.key`
+ - `devcert`
+	- Uses devcert to generate keys and automatically trusts them for your browser. Requires root privileges.
+
+Any other value will default to HTTP only
