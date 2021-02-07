@@ -15,6 +15,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 3,
@@ -45,6 +47,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 4,
@@ -60,6 +63,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 5,
@@ -75,6 +79,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 6,
@@ -90,6 +95,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 7,
@@ -105,6 +111,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 8,
@@ -120,6 +127,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 9,
@@ -135,6 +143,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 10,
@@ -150,6 +159,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 11,
@@ -165,6 +175,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 12,
@@ -180,6 +191,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 13,
@@ -195,6 +207,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 14,
@@ -210,6 +223,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 15,
@@ -225,6 +239,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 16,
@@ -240,6 +255,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 17,
@@ -255,6 +271,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 18,
@@ -270,6 +287,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 19,
@@ -285,6 +303,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 20,
@@ -300,6 +319,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 21,
@@ -315,6 +335,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 22,
@@ -330,6 +351,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 23,
@@ -345,6 +367,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 24,
@@ -360,6 +383,7 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
   {
     id: 25,
@@ -375,5 +399,6 @@ export const Shipments: Shipment[] = [
     latestEvent: '',
     deliveryCompany: 'Posti',
     invoiceNumber: '',
+    shippingMethod: 'Noutopistepaketti',
   },
 ]
