@@ -25,18 +25,31 @@ export interface Shipment {
   // Metadata
   id: number
   createdOn: string
-  // Shipping Address
-  receiverName: string
+  // sender
+  businessID: string
+  senderName: string
+  senderAddress: string
+  senderCountry: string
+  senderPostCode: string
+  senderCity: string
+  senderPhoneNumber: string
+  senderEmail: string
+  // receiver
+  receiverAddress: string
+  receiverCity: string
+  receiverCountry: string
   receiverEmail: string
-  postCode: string // This could be a number but this seems more consistent
-  postOffice: string
-  countryCode: string
+  receiverName: string
+  receiverPhoneNumber: string
+  receiverPostCode: string
   // Other
   price: number
-  deliveryCompany: string
-  status: string
+  description: string
   reference: string
+  deliveryCompany: string
+  shippingMethod: string
+  weight: number
+  status: string
   latestEvent: string
   invoiceNumber: string
-  shippingMethod: string
 }

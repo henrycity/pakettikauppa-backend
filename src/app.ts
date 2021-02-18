@@ -73,9 +73,9 @@ app.post(
   // Validate shipment fields
   body('receiverName').isString(),
   body('receiverEmail').isEmail().normalizeEmail(),
-  body('postCode').isPostalCode('FI'),
-  body('postOffice').isString(),
-  body('countryCode').equals('FI'),
+  body('receiverPostCode').isPostalCode('FI'),
+  body('receiverCity').isString(),
+  body('receiverCountry').equals('Finland'),
   (req: Request, res: Response) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
@@ -86,20 +86,33 @@ app.post(
     const newShipment = {
       id: Shipments[Shipments.length - 1].id + 1, // Increment last shipment's ID by 1
       createdOn: new Date().toString(),
+      businessID: postData.businessID,
+      senderName: postData.senderName,
+      senderAddress: postData.senderAddress,
+      senderCountry: postData.senderCountry,
+      senderPostCode: postData.senderPostCode,
+      senderCity: postData.senderCity,
+      senderPhoneNumber: postData.senderPhoneNumber,
+      senderEmail: postData.senderEmail,
       receiverName: postData.receiverName,
       receiverEmail: postData.receiverEmail,
-      postCode: postData.postCode,
-      postOffice: postData.postOffice,
-      countryCode: postData.countryCode,
+      receiverPostCode: postData.receiverPostCode,
+      receiverCity: postData.receiverCity,
+      receiverCountry: postData.receiverCountry,
+      receiverPhoneNumber: postData.receiverPhoneNumber,
+      receiverAddress: postData.receiverAddress,
       deliveryCompany: postData.deliveryCompany,
       shippingMethod: postData.shippingMethod,
+      weight: postData.weight,
       price: 0, // Ideally this should be queried from the Posti API in the backend (Don't trust the user)
       // The following should be changed when we have implementation for it
       status: '',
-      reference: '',
+      reference: postData.reference,
       latestEvent: '',
-      invoiceNumber: '',
+      invoiceNumber: postData.invoiceNumber,
+      description: postData.description,
     }
+
     Shipments.push(newShipment) // Add the new shipment to our shipments
     res.json({ success: true, shipment: newShipment })
   }
