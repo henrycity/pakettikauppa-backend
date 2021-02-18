@@ -63,8 +63,17 @@ app.get('/permissions', tokenVerifier, (_req, res) => {
   res.json(permissions)
 })
 
-app.get('/shipments', tokenVerifier, (_req, res) => {
-  res.json(Shipments)
+app.get('/shipments', tokenVerifier, (req, res) => {
+  const search = req.query.search?.toString().toLowerCase()
+  if (search) {
+    res.json(
+      Shipments.filter((shipment) => {
+        return JSON.stringify(shipment).toLowerCase().includes(search)
+      })
+    )
+  } else {
+    res.json(Shipments)
+  }
 })
 
 app.post(
