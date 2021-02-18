@@ -24,7 +24,7 @@ export interface Permission {
 export interface Shipment {
   // Metadata
   id: number
-  createdOn: Date
+  createdOn: string
   // Shipping Address
   receiverName: string
   receiverEmail: string

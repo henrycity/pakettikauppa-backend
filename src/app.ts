@@ -64,12 +64,7 @@ app.get('/permissions', tokenVerifier, (_req, res) => {
 })
 
 app.get('/shipments', tokenVerifier, (_req, res) => {
-  const shipments = Shipments.map((shipment) => {
-    const s: any = { ...shipment }
-    s.createdOn = shipment.createdOn.toLocaleDateString('fi-FI')
-    return s
-  })
-  res.json(shipments)
+  res.json(Shipments)
 })
 
 app.post(
@@ -90,7 +85,7 @@ app.post(
     // Create a new shipment based on the given values. Will not include any extra fields from the post for security and such
     const newShipment = {
       id: Shipments[Shipments.length - 1].id + 1, // Increment last shipment's ID by 1
-      createdOn: new Date(),
+      createdOn: new Date().toString(),
       receiverName: postData.receiverName,
       receiverEmail: postData.receiverEmail,
       postCode: postData.postCode,

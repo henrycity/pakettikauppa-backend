@@ -3,7 +3,7 @@ import { Shipment } from './models'
 export const Shipments: Shipment[] = [
   {
     id: 1,
-    createdOn: new Date(2021, 0, 4),
+    createdOn: '2021-01-04',
     receiverName: 'Henry',
     receiverEmail: 'henry@posti.fi',
     postCode: '02150',
@@ -19,7 +19,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 2,
-    createdOn: new Date(2020, 11, 25),
+    createdOn: '2020-12-25',
     receiverName: 'Joose',
     receiverEmail: 'joose@posti.fi',
     postCode: '01530',
@@ -35,7 +35,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 3,
-    createdOn: new Date(2020, 11, 25),
+    createdOn: '2020-12-25',
     receiverName: 'Testeri',
     receiverEmail: 'testeri@posti.fi',
     postCode: '02700',
@@ -51,7 +51,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 4,
-    createdOn: new Date(2020, 11, 25),
+    createdOn: '2020-12-25',
     receiverName: 'Testeri2',
     receiverEmail: 'testeri2@posti.fi',
     postCode: '02150',
@@ -67,7 +67,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 5,
-    createdOn: new Date(2020, 11, 26),
+    createdOn: '2020-12-26',
     receiverName: 'Matti',
     receiverEmail: 'matinposti@posti.fi',
     postCode: '02110',
@@ -83,7 +83,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 6,
-    createdOn: new Date(2020, 11, 26),
+    createdOn: '2020-12-26',
     receiverName: 'Pirkko',
     receiverEmail: 'pirkko@posti.fi',
     postCode: '02700',
@@ -99,7 +99,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 7,
-    createdOn: new Date(2020, 11, 26),
+    createdOn: '2020-12-26',
     receiverName: 'Stadilainen',
     receiverEmail: 'stadilainen@posti.fi',
     postCode: '02400',
@@ -115,7 +115,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 8,
-    createdOn: new Date(2020, 11, 28),
+    createdOn: '2020-12-28',
     receiverName: 'Miksu',
     receiverEmail: 'mm@posti.fi',
     postCode: '01530',
@@ -131,7 +131,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 9,
-    createdOn: new Date(2020, 11, 28),
+    createdOn: '2020-12-28',
     receiverName: 'Tuttu',
     receiverEmail: 'tuttu@yahoo.fi',
     postCode: '01530',
@@ -147,7 +147,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 10,
-    createdOn: new Date(2020, 11, 28),
+    createdOn: '2020-12-28',
     receiverName: 'Joose2',
     receiverEmail: 'joose2@posti.fi',
     postCode: '01530',
@@ -163,7 +163,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 11,
-    createdOn: new Date(2020, 11, 29),
+    createdOn: '2020-12-29',
     receiverName: 'The Queen',
     receiverEmail: 'UK@posti.fi',
     postCode: '01530',
@@ -179,7 +179,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 12,
-    createdOn: new Date(2020, 11, 29),
+    createdOn: '2020-12-29',
     receiverName: 'Charles',
     receiverEmail: 'UK@posti.fi',
     postCode: '01530',
@@ -195,7 +195,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 13,
-    createdOn: new Date(2020, 11, 29),
+    createdOn: '2020-12-29',
     receiverName: 'Diana',
     receiverEmail: 'Diana@posti.fi',
     postCode: '03990',
@@ -211,7 +211,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 14,
-    createdOn: new Date(2020, 11, 30),
+    createdOn: '2020-12-30',
     receiverName: 'Joose3',
     receiverEmail: 'joose3@posti.fi',
     postCode: '01530',
@@ -227,7 +227,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 15,
-    createdOn: new Date(2020, 11, 30),
+    createdOn: '2020-12-30',
     receiverName: 'LauraJennaElliNooraAlexandaCamilla',
     receiverEmail: 'joose@posti.fi',
     postCode: '01530',
@@ -243,7 +243,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 16,
-    createdOn: new Date(2020, 11, 30),
+    createdOn: '2020-12-30',
     receiverName: 'PostinCEO',
     receiverEmail: 'CEO@posti.fi',
     postCode: '01530',
@@ -259,7 +259,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 17,
-    createdOn: new Date(2020, 11, 31),
+    createdOn: '2020-12-31',
     receiverName: 'Tietokilta',
     receiverEmail: 'TIK@posti.fi',
     postCode: '01530',
@@ -275,7 +275,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 18,
-    createdOn: new Date(2020, 11, 31),
+    createdOn: '2020-12-31',
     receiverName: 'Pikkumyy',
     receiverEmail: 'Pikkumyy@muumit.fi',
     postCode: '01530',
@@ -291,7 +291,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 19,
-    createdOn: new Date(2020, 11, 31),
+    createdOn: '2020-12-31',
     receiverName: 'Leevi',
     receiverEmail: 'Leavings.Leevi@posti.fi',
     postCode: '01530',
@@ -307,7 +307,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 20,
-    createdOn: new Date(2021, 0, 1),
+    createdOn: '2021-01-01',
     receiverName: 'Arttu',
     receiverEmail: 'WiskarinArttu@lippu.fi',
     postCode: '01530',
@@ -323,7 +323,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 21,
-    createdOn: new Date(2021, 0, 2),
+    createdOn: '2021-01-02',
     receiverName: 'Jenni',
     receiverEmail: 'jenni@posti.fi',
     postCode: '02150',
@@ -339,7 +339,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 22,
-    createdOn: new Date(2021, 0, 4),
+    createdOn: '2021-01-04',
     receiverName: 'Sauli',
     receiverEmail: 'NiinistönSauli@presidentti.fi',
     postCode: '01530',
@@ -355,7 +355,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 23,
-    createdOn: new Date(2021, 0, 6),
+    createdOn: '2021-01-06',
     receiverName: 'Camilla',
     receiverEmail: 'Camilla@gmail.com',
     postCode: '01530',
@@ -371,7 +371,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 24,
-    createdOn: new Date(2021, 0, 8),
+    createdOn: '2021-01-08',
     receiverName: 'Joose',
     receiverEmail: 'joose@posti.fi',
     postCode: '01530',
@@ -387,7 +387,7 @@ export const Shipments: Shipment[] = [
   },
   {
     id: 25,
-    createdOn: new Date(2021, 0, 10),
+    createdOn: '2021-01-10',
     receiverName: 'Joose6',
     receiverEmail: 'joose6@posti.fi',
     postCode: '01530',
