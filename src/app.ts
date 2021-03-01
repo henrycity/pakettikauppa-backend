@@ -82,6 +82,28 @@ app.get('/shipment', tokenVerifier, (req, res) => {
   shipment ? res.json(shipment) : res.status(400).send('Shipment not found')
 })
 
+app.get('/shipments/:id', tokenVerifier, (req, res) => {
+  const id = req.params.id
+  if (!id) {
+    return res.status(400).send('Invalid ID')
+  }
+  const Shipment = Shipments.find((s) => s.id === Number(id))
+  Shipment ? res.json(Shipment) : res.status(400).send('Shipment not found')
+})
+
+app.delete('/shipments/:id', tokenVerifier, (req, res) => {
+  const id = req.params.id
+  if (!id) {
+    return res.status(400).send('Invalid ID')
+  }
+  const i = Shipments.findIndex((s) => s.id === Number(id))
+  if (i > -1) {
+    res.json(Shipments.splice(i, 1))
+  } else {
+    return res.status(400).send('Shipment not found')
+  }
+})
+
 app.post(
   '/shipments',
   tokenVerifier,
