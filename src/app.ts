@@ -76,6 +76,12 @@ app.get('/shipments', tokenVerifier, (req, res) => {
   }
 })
 
+app.get('/shipment', tokenVerifier, (req, res) => {
+  const id = req.query.id
+  const shipment = Shipments.find((s) => s.id === Number(id))
+  shipment ? res.json(shipment) : res.status(400).send('Shipment not found')
+})
+
 app.post(
   '/shipments',
   tokenVerifier,
