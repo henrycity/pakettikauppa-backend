@@ -3,6 +3,7 @@ import { Shipment } from './models'
 export const Shipments: Shipment[] = [
   {
     id: 1,
+    trackingCode: 'JJFITESTLABEL000000690',
     createdOn: '2021-01-04',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
@@ -32,6 +33,7 @@ export const Shipments: Shipment[] = [
   {
     id: 2,
     createdOn: '2020-12-25',
+    trackingCode: 'JJFITESTLABEL000000691',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -60,6 +62,7 @@ export const Shipments: Shipment[] = [
   {
     id: 3,
     createdOn: '2020-12-25',
+    trackingCode: 'JJFITESTLABEL000000693',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -88,6 +91,7 @@ export const Shipments: Shipment[] = [
   {
     id: 4,
     createdOn: '2020-12-25',
+    trackingCode: 'JJFITESTLABEL000000694',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -116,6 +120,7 @@ export const Shipments: Shipment[] = [
   {
     id: 5,
     createdOn: '2020-12-26',
+    trackingCode: 'JJFITESTLABEL000000695',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -144,6 +149,7 @@ export const Shipments: Shipment[] = [
   {
     id: 6,
     createdOn: '2020-12-26',
+    trackingCode: 'JJFITESTLABEL000000697',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -172,6 +178,7 @@ export const Shipments: Shipment[] = [
   {
     id: 7,
     createdOn: '2020-12-26',
+    trackingCode: 'JJFITESTLABEL000000698',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -200,6 +207,7 @@ export const Shipments: Shipment[] = [
   {
     id: 8,
     createdOn: '2020-12-26',
+    trackingCode: 'JJFITESTLABEL000000699',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -228,6 +236,7 @@ export const Shipments: Shipment[] = [
   {
     id: 9,
     createdOn: '2020-12-26',
+    trackingCode: 'JJFITESTLABEL000000700',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -256,6 +265,7 @@ export const Shipments: Shipment[] = [
   {
     id: 10,
     createdOn: '2020-12-26',
+    trackingCode: 'JJFITESTLABEL000000701',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -284,6 +294,7 @@ export const Shipments: Shipment[] = [
   {
     id: 11,
     createdOn: '2020-12-28',
+    trackingCode: 'JJFITESTLABEL000000702',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -312,6 +323,7 @@ export const Shipments: Shipment[] = [
   {
     id: 12,
     createdOn: '2020-12-28',
+    trackingCode: 'JJFITESTLABEL000000703',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -340,6 +352,7 @@ export const Shipments: Shipment[] = [
   {
     id: 13,
     createdOn: '2020-12-28',
+    trackingCode: 'JJFITESTLABEL000000704',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -368,6 +381,7 @@ export const Shipments: Shipment[] = [
   {
     id: 14,
     createdOn: '2021-01-01',
+    trackingCode: 'JJFITESTLABEL000000705',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -396,6 +410,7 @@ export const Shipments: Shipment[] = [
   {
     id: 15,
     createdOn: '2021-01-01',
+    trackingCode: 'JJFITESTLABEL000000706',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -424,6 +439,7 @@ export const Shipments: Shipment[] = [
   {
     id: 16,
     createdOn: '2021-01-01',
+    trackingCode: 'JJFITESTLABEL000000707',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -452,6 +468,7 @@ export const Shipments: Shipment[] = [
   {
     id: 17,
     createdOn: '2021-01-01',
+    trackingCode: 'JJFITESTLABEL000000708',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -480,6 +497,7 @@ export const Shipments: Shipment[] = [
   {
     id: 18,
     createdOn: '2021-01-08',
+    trackingCode: 'JJFITESTLABEL000000709',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -508,6 +526,7 @@ export const Shipments: Shipment[] = [
   {
     id: 19,
     createdOn: '2021-01-08',
+    trackingCode: 'JJFITESTLABEL000000710',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -565,6 +584,7 @@ export const Shipments: Shipment[] = [
   {
     id: 21,
     createdOn: '2021-01-08',
+    trackingCode: 'JJFITESTLABEL000000711',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -594,6 +614,7 @@ export const Shipments: Shipment[] = [
   {
     id: 22,
     createdOn: '2021-01-10',
+    trackingCode: 'JJFITESTLABEL000000712',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -622,6 +643,7 @@ export const Shipments: Shipment[] = [
   {
     id: 23,
     createdOn: '2021-01-10',
+    trackingCode: 'JJFITESTLABEL000000713',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -650,6 +672,7 @@ export const Shipments: Shipment[] = [
   {
     id: 24,
     createdOn: '2021-01-10',
+    trackingCode: 'JJFITESTLABEL000000714',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',
@@ -678,6 +701,7 @@ export const Shipments: Shipment[] = [
   {
     id: 25,
     createdOn: '2021-01-10',
+    trackingCode: 'JJFITESTLABEL000000715',
     businessID: '0000000',
     senderName: 'SoftaProjektiCrew',
     senderAddress: 'Innopolintie 13',

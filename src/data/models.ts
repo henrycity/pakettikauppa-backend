@@ -25,6 +25,7 @@ export interface Shipment {
   // Metadata
   id: number
   createdOn: string
+  trackingCode?: string
   // sender
   businessID: string
   senderName: string
