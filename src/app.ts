@@ -1,3 +1,7 @@
+/* 
+  This file includes all core functionality of the backend,
+  including all the endpoint implementations
+*/
 import express, { Request, Response } from 'express'
 import { AdminUser } from './data/users'
 import { Shipments } from './data/shipments'
@@ -13,6 +17,7 @@ const app = express()
 // https://stackoverflow.com/questions/23413401/what-does-trust-proxy-actually-do-in-express-js-and-do-i-need-to-use-it
 app.set('trust proxy', true)
 
+// Middleware
 const corsOptions = {
   credentials: true,
   origin: true,
@@ -21,6 +26,7 @@ app.use(cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
+// Settings for auth cookie
 const cookieSettings = {
   httpOnly: true,
   maxAge: 3600000,
@@ -31,6 +37,7 @@ const cookieSettings = {
   secure: process.env.NODE_ENV === 'production' ? true : false,
 }
 
+// API endpoints
 app.post('/login', (req, res) => {
   const { idToken } = req.body
   res.cookie('jwt', idToken, cookieSettings)
@@ -68,7 +75,7 @@ app.get('/shipments', tokenVerifier, (req, res) => {
   if (search) {
     res.json(
       Shipments.filter((shipment) => {
-        return JSON.stringify(shipment).toLowerCase().includes(search)
+        return JSON.stringify(shipment).toLowerCase().includes(search) // Use JSON representation of data to allow for easy searching of all fields
       })
     )
   } else {
@@ -96,9 +103,9 @@ app.delete('/shipments/:id', tokenVerifier, (req, res) => {
   if (!id) {
     return res.status(400).send('Invalid ID')
   }
-  const i = Shipments.findIndex((s) => s.id === Number(id))
+  const i = Shipments.findIndex((s) => s.id === Number(id)) // Find index of shipment with given ID
   if (i > -1) {
-    res.json(Shipments.splice(i, 1))
+    res.json(Shipments.splice(i, 1)) // Pick shipment with the index
   } else {
     return res.status(400).send('Shipment not found')
   }
@@ -116,13 +123,13 @@ app.post(
   (req: Request, res: Response) => {
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() })
+      return res.status(400).json({ errors: errors.array() }) // Return errors if there are any
     }
     const postData = req.body
     // Create a new shipment based on the given values. Will not include any extra fields from the post for security and such
     const newShipment = {
-      id: Shipments[Shipments.length - 1].id + 1, // Increment last shipment's ID by 1
-      createdOn: new Date().toString(),
+      id: Shipments[Shipments.length - 1].id + 1, // Increment last shipment's ID by 1, will leave empty slots if a shipment is deleted from the middle
+      createdOn: new Date().toISOString(), // Use current time
       businessID: postData.businessID,
       senderName: postData.senderName,
       senderAddress: postData.senderAddress,
@@ -151,7 +158,7 @@ app.post(
     }
 
     Shipments.push(newShipment) // Add the new shipment to our shipments
-    res.json({ success: true, shipment: newShipment })
+    res.json({ success: true, shipment: newShipment }) // Return the created shipment
   }
 )
 

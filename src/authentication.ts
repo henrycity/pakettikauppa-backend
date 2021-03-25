@@ -1,3 +1,6 @@
+/*
+  This file provides middleware for restricted endpoints
+*/
 import { Request, Response, NextFunction } from 'express'
 
 export function tokenVerifier(
