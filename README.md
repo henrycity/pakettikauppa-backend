@@ -44,3 +44,6 @@ Any other value will default to HTTP only.
 ## File structure
 The backend has a simple file structure: Configuration files are located in the project root, and source files are in the `./src` folder.
 Built JavaScript files are located in the `./build` folder. The served data is stored in-memory, and loaded from the files in `./src/data`.
+
+## Docker support
+The backend is set up to be deployed via a Docker image in CI. The project includes a multi-stage Dockerfile that will produce a minimal final image.
